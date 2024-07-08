@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Bar</title>
+    <style>
+        body {
+            background-color: #a6c8ff;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 600px   ;
+            margin: 0;
+        }
+        .search-container {
+            display: flex;  
+            align-items: center;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            background-color: white;
+            overflow: hidden;
+            border-radius: 18px;
+        }
+        .ever
+        {
+            background-color: #b52b67;
+            color: white;
+            border-radius: 18px;
+            height: 40px;
+            padding-left: 10px;
+            border-color: #b52b67;
+        }
+        .ever:hover{
+            cursor: pointer;
+        }
+        .dropdown-item {
+            top: 100%;
+            left: 0;
+            background-color: white;
+            color: #b52b67;
+            
+        }
+        .search-bar {
+            padding: 10px;
+            border: none;
+            width: 300px;
+            outline: none;
+            color: #b52b67;
+            padding-left: 10px;
+        }
+        .search-button {
+            padding: 10px;
+            background-color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 0;
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="search-container">
+            <div>              
+                    <select class="ever" name="Everything"  id="Everything" onchange="updateTextbox()">
+                        <option class="dropdown-item" value='Everything'>Everything</option>
+                        <option class="dropdown-item" value='Software development'>Software development</option>
+                        <option class="dropdown-item" value='Web development'>Web development</option>
+                        <option class="dropdown-item" value='Data Analyst'>Data Analyst</option>
+                        <option class="dropdown-item" value='IT Consultant'>IT Consultant</option>
+                        <option class="dropdown-item" value='Network administrator'>Network administrator</option>
+                      </select>
+            </div>
+        <input type="text" class="search-bar" id="search" value="Search Anything">
+        <button class="search-button">🔍</button>
+    </div>
+</body>
+<script>
+function updateTextbox() {
+            var dropdown=document.getElementById('Everything');
+            var textbox=document.getElementById('search');
+            textbox.value="Search "+ dropdown.value;
+        }
+</script>
+</html>

@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In</title>
+    <style>
+        html, body {
+            height: 100%;
+            padding: 0;
+            margin: 0;
+        }
+        body {
+            background: url(trees.png) center center no-repeat, url(bg.jpg);
+            background-size: 100%, cover;
+        }
+        #girlr {
+            height: 300px;
+            width: 200px;
+            position: relative;
+            padding-top: 325px;
+            animation: moveimage2 4s linear infinite;
+        }
+        @keyframes moveimage2 {
+            0% {
+                left: 0;
+                top: 40%;
+                transform: translateY(-50%);
+            }
+            100% {
+                left: 100%;
+                top: 40%;
+                transform: translate(-100%, -50%);
+            }
+        }
+        #l1_1 {
+            height: auto;
+            width: auto;
+            position: absolute;
+            left: 20%;
+            top:-50px;
+            animation: movevertically 4s linear infinite, rotate 4s linear infinite;
+        }
+        #l1_2 {
+            height: auto;
+            width: auto;
+            position: absolute;
+            top: -50px;
+            right: 10%;
+            animation: movevertically 4s linear infinite, rotate 4s linear infinite;
+        }
+        #l2_1 {
+            height: auto;
+            width: auto;
+            position: absolute;
+            left: 15%;
+            top:-50px;
+            animation: movevertically 4s linear infinite, rotate 4s linear infinite;
+        }
+        #l2_2 {
+            height: auto;
+            width: auto;
+            position: absolute;
+            top: -50px;
+            right: 5%;
+            animation: movevertically 4s linear infinite, rotate 4s linear infinite;
+        }
+        #l3_1 {
+            height: auto;
+            width: auto;
+            position: absolute;
+            left: 28%;
+            top:-50px;
+            animation: movevertically 4s linear infinite, rotate 4s linear infinite;
+        }
+        #l3_2 {
+            height: auto;
+            width: auto;
+            position: absolute;
+            top: -50px;
+            right: 25%;
+            animation: movevertically 4s linear infinite, rotate 4s linear infinite;
+        }
+        #l4_1 {
+            height: auto;
+            width: auto;
+            position: absolute;
+            left: 35%;
+            top:-50px;
+            animation: movevertically 4s linear infinite, rotate 4s linear infinite;
+        }
+        #l4_2 {
+            height: auto;
+            width: auto;
+            position: absolute;
+            top: -50px;
+            right: 35%;
+            animation: movevertically 4s linear infinite, rotate 4s linear infinite;
+        }
+        @keyframes movevertically {
+            0% {
+                top: -100px; /* Start above the viewport */
+            }
+            100% {
+                top: 90vh; /* End below the viewport */
+            }
+        }
+        @keyframes rotate {
+            0% {
+                transform: rotate(0deg);
+            }
+            20% {
+                transform: rotate(50deg);
+            }
+            40% {
+                transform: rotate(100deg);
+            }
+            60% {
+                transform: rotate(150deg);
+            }
+            80% {
+                transform: rotate(200deg);
+            }
+            100% {
+                transform: rotate(250deg);
+            }
+        }
+        .container{
+            position:absolute;
+            background-color: rgba(255, 255, 255, 0.5);
+            height: 350px;
+            width: 350px;
+            border-radius: 10px;
+            top: 40%;
+            left: 35%;
+        }
+        h1{
+            position: relative;
+            top: 7%;
+            color: maroon;
+            text-align: center;
+        }
+        #user{
+            color: maroon;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: large;
+            height: 28px;
+            width: 250px;
+            position: relative;
+            left:12%;
+            top: 7%;
+        }
+        #password{
+            color: maroon;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: large;
+            height: 28px;
+            width: 250px;
+            position: relative;
+            left:12%;
+            top: 7%;
+        }
+        #Login{
+            color: white;
+            background-color: maroon;
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: large;
+            height: 28px;
+            width: 258px;
+            position: relative;
+            left:12%;
+            top: 7%;
+        }
+        #fp
+        {
+            color: maroon;
+            background-color: transparent;
+            border: none;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: medium;
+            position: relative;
+            left:11%;
+            top: 7%;
+        }
+        #su
+        {
+            color: maroon;
+            background-color: transparent;
+            border: none;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size:medium;
+            position: relative;
+            left: 32%;
+            top: 7%;
+        }
+    </style>
+</head>
+<body>
+    <img src="girlr.png" id="girlr">
+    <img src="leaf_01.png" id="l1_1">
+    <img src="leaf_01.png" id="l1_2">
+    <img src="leaf_02.png" id="l2_1">
+    <img src="leaf_02.png" id="l2_2">
+    <img src="leaf_03.png" id="l3_1">
+    <img src="leaf_03.png" id="l3_2">
+    <img src="leaf_04.png" id="l4_1">
+    <img src="leaf_04.png" id="l4_2">
+    <div class="container">
+        <h1>Sign In</h1>
+        <input type="text" id="user" value="Username"><br><br>
+        <input type="text" id="password" value="Password"><br><br>
+        <button type="button" id="Login">Login</button><br><br>    
+        <button type="button" id="fp">Forgot Password</button>
+        <button type="button" id="su">Signup</button>
+    </div>
+</body>
+</html>
