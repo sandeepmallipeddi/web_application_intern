@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav {
+            background-color: #333;
+            color: #fff;
+            padding: 1rem;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        nav ul li {
+            display: inline;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+        }
+
+        nav ul li a:hover {
+            background-color: #555;
+        }
+
+        main {
+            padding: 2rem;
+        }
+
+        .product-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin-bottom: 2rem;
+        }
+
+        .product-image img {
+            max-width: 50%;
+            height: auto;
+            border-radius: 8px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .product-image img:hover {
+            transform: scale(1.05);
+        }
+
+        .product-details {
+            max-width: 600px;
+            margin: 1rem;
+        }
+
+        .product-name {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .product-description {
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .product-price {
+            font-size: 1.5rem;
+            color: #e60023;
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+
+        .add-to-cart {
+            background-color: #e60023;
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            font-size: 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .add-to-cart:hover {
+            transform: scale(1.05);
+        }
+
+        .related-products, .customer-reviews {
+            margin-top: 2rem;
+        }
+
+        .related-products h2, .customer-reviews h2 {
+            margin-bottom: 1rem;
+        }
+
+        .related-products .product-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .related-products .product-item {
+            text-align: center;
+            margin: 0.5rem;
+        }
+
+        .related-products .product-item img {
+            width: 150px;
+            height: 150px;
+            margin: 0.5rem;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .related-products .product-item img:hover {
+            transform: scale(1.1);
+        }
+
+        .customer-reviews .review {
+            border-bottom: 1px solid #ddd;
+            padding: 1rem 0;
+        }
+
+        .customer-reviews .review .stars {
+            color: #ffd700;
+        }
+
+        .customer-reviews .review .comment {
+            margin: 0.5rem 0;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .product-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .product-details {
+                text-align: center;
+            }
+
+            .related-products .product-gallery {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        /* Quick View Popup */
+        .quick-view-popup {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .quick-view-content {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .quick-view-content img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Shop</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+    <main>
+        <div class="product-container">
+            <div class="product-image">
+                <img src="apple_watch.jpg" alt="Product Image">
+            </div>
+            <div class="product-details">
+                <h1 class="product-name">Apple Watch Series 9</h1>
+                <p class="product-description">This is a detailed description of the product. It highlights features and specifications that might interest the customer.</p>
+                <span class="product-price">$499.99</span>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+        </div>
+        <div class="related-products">
+            <h2>Related Products</h2>
+            <div class="product-gallery">
+                <div class="product-item">
+                    <img src="apple_se.jpeg" alt="Related Product 1">
+                    <h3>Apple Watch SE</h3>
+                </div>
+                <div class="product-item">
+                    <img src="apple_ultra.jpg" alt="Related Product 2">
+                    <h3>Apple Watch ULTRA</h3>
+                </div>
+                <div class="product-item">
+                    <img src="apple_8.jpeg" alt="Related Product 3">
+                    <h3>Apple Watch Series 8</h3>
+                </div>
+            </div>
+        </div>
+        <div class="customer-reviews">
+            <h2>Customer Reviews</h2>
+            <div class="review">
+                <div class="stars">★★★★☆</div>
+                <div class="comment">Great product! It has really improved my daily routine.</div>
+                <div class="reviewer">- John Doe</div>
+            </div>
+            <div class="review">
+                <div class="stars">★★★★★</div>
+                <div class="comment">Excellent! High quality and very reliable.</div>
+                <div class="reviewer">- Jane Smith</div>
+            </div>
+            <div class="review">
+                <div class="stars">★★★☆☆</div>
+                <div class="comment">Good, but the battery life could be better.</div>
+                <div class="reviewer">- Alice Johnson</div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Quick View Popup -->
+    <div id="quick-view" class="quick-view-popup">
+        <div class="quick-view-content">
+            <span class="close">&times;</span>
+            <img src="product.jpg" alt="Product Image">
+            <h1>Apple Watch Series</h1>
+            <p>This is a detailed description of the product.</p>
+            <span>$99.99</span>
+            <button>Add to Cart</button>
+        </div>
+    </div>
+
+    <script>
+        const quickView = document.getElementById('quick-view');
+        const closeBtn = document.querySelector('.quick-view-popup .close');
+
+        document.querySelector('.product-image img').addEventListener('click', () => {
+            quickView.style.display = 'flex';
+        });
+
+        closeBtn.addEventListener('click', () => {
+            quickView.style.display = 'none';
+        });
+    </script>
+</body>
+</html>
